@@ -15,6 +15,7 @@ import Footer from './Constant-Comp/Footer';
 import SideNav from './Constant-Comp/SideNav';
 import Overlay from './Global-Comp/Overlay';
 import SocialTags from './Global-Comp/SocialTags';
+import ScrollToTop from './Constant-Comp/ScrollToTop';
 
 
 
@@ -73,19 +74,17 @@ export default class App extends Component {
     return (
 
       <Router >
-
-          <div className='App'>
+        <ScrollToTop>
+           <div className='App'>
         
               <Navigation ToggleNav={ToggleNav} ActiveTab={this.state.ActiveTab} MenuTabActive={MenuTabActive} BookingTabActive={BookingTabActive} StoryTabActive={StoryTabActive} ExperienceTabActive={ExperienceTabActive} LandingTabActive={LandingTabActive}/>
               <SideNav CloseNav={CloseNav} NavOpen={this.state.NavOpen} />
                 
                 {BackDrop}
 
-                  
                     <Switch>
 
                         <Route path='/' exact render={(props) => <Landing {...props} MenuTabActive={MenuTabActive} BookingTabActive={BookingTabActive} StoryTabActive={StoryTabActive} />} />
-
                         <Route path='/menu' component={Menu}/>
                         <Route path='/booking' component={Booking}/>
                         <Route path='/ourstory' component={OurStory}/>
@@ -93,16 +92,11 @@ export default class App extends Component {
 
                     </Switch>
 
-                  
-                    
-
-                  
-
-              <SocialTags />
+                <SocialTags />
               <Footer />
 
           </div>
-
+        </ScrollToTop>
       </Router>
       
     )

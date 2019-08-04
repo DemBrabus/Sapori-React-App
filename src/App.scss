@@ -13,7 +13,6 @@
   color: #E8E8E8;
   background-color: #1c1b1b;
   position: relative;
-  overflow-x: hidden;
 }
 
 a {
@@ -194,7 +193,7 @@ $color: (
   top: 0;
   background-color: color(White);
   transform: translateX(100%);
-  transition: all 1s ease-in-out;
+  transition: all .3s ease-in-out;
   z-index: 1002;
 
   .SideNav-InnerWrap {
